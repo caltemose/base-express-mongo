@@ -1,0 +1,20 @@
+{
+  "name": "base-mongo-express",
+  "version": "1.0.0",
+  "description": "Basic server with API for teaching simple CRUD to developers.",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon ./server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caltemose/base-mongo-express.git"
+  },
+  "author": "Chad L. Altemose",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caltemose/base-mongo-express/issues"
+  },
+  "homepage": "https://github.com/caltemose/base-mongo-express#readme",
+  "dependencies": {}
+}
