@@ -6,12 +6,24 @@ const Item = mongoose.model('Item')
 router.get('/', (req, res) => {
     Item.find((err, items) => {
         if (err)
-            res.json({ err })
+            return res.json({ err })
 
         if (!items)
-            res.json({ err: "No items available" })
+            return res.json({ err: "No items available" })
 
         res.json(items)
+    })
+})
+
+router.post('/', (req, res) => {
+    if (!req.body.name)
+        return res.status(400).json({ err: "You must provide an item name" })
+
+    Item.create({ name: req.body.name }, (err, item) => {
+        if (err)
+            return res.status(503).json({ err })
+
+        res.json(item)
     })
 })
 
