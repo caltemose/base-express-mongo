@@ -6,9 +6,7 @@ const config = {
 
 const app = express()
 
-app.get('/', (req, res) => {
-    res.send('hi there.')
-})
+app.use('/', require('./routes'))
 
 app.listen(config.port, () => {
     console.log('Express running on port:', config.port)
