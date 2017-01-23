@@ -1,6 +1,7 @@
 const express = require('express')
 
 const errors = require('./middleware/errors')
+const middleware = require('./middleware')
 
 const config = {
     port: 4444
@@ -8,8 +9,8 @@ const config = {
 
 const app = express()
 
+middleware(app)
 app.use('/', require('./routes'))
-
 errors(app)
 
 app.listen(config.port, () => {
