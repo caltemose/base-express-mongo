@@ -4,7 +4,7 @@
   "description": "Basic server with API for teaching simple CRUD to developers.",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon ./server.js"
+    "start": "node ./server.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,7 @@
     "url": "https://github.com/caltemose/base-mongo-express/issues"
   },
   "homepage": "https://github.com/caltemose/base-mongo-express#readme",
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
