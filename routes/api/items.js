@@ -1,13 +1,18 @@
 const express = require('express')
 const router = express.Router()
+const mongoose = require('mongoose')
+const Item = mongoose.model('Item')
 
 router.get('/', (req, res) => {
-    const items = [
-        { _id: '1', name: 'one' },
-        { _id: '2', name: 'two' },
-        { _id: '3', name: 'three' }
-    ]
-    res.json({ items })
+    Item.find((err, items) => {
+        if (err)
+            res.json({ err })
+
+        if (!items)
+            res.json({ err: "No items available" })
+
+        res.json(items)
+    })
 })
 
 module.exports = router

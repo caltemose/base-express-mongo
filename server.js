@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 
 const errors = require('./middleware/errors')
 const middleware = require('./middleware')
+const models = require('./models')
 
 // NOTE these would be config defaults for DEV but ultimately would
 // be handled by reading environment variables or something more appropriate
