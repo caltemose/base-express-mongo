@@ -42,4 +42,25 @@ router.put('/', (req, res) => {
     })
 })
 
+// DELETE
+router.delete('/', (req, res) => {
+    if (!req.body._id)
+        return res.status(400).json({ err: "You must supply an _id of an item to delete" })
+
+    Item.findByIdAndRemove(req.body._id, (err, document) => {
+        // TODO determine how to send the correct error code
+        if (err) {
+            if (err.name === 'CastError')
+                return res.status(400).json({ err: "An improperly formed _id was provided." })
+
+            return res.json({ err })
+        }
+
+        if (!document)
+            return res.status(400).json({ err: "No document was found with the given _id" })
+
+        res.json({ document })
+    })
+})
+
 module.exports = router
