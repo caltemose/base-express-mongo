@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
+const sleep = require('sleep')
 const Item = mongoose.model('Item')
 
 // READ
@@ -18,6 +19,8 @@ router.get('/', (req, res) => {
 
 // CREATE
 router.post('/', (req, res) => {
+    sleep.sleep(1)
+
     if (!req.body.name)
         return res.status(400).json({ err: "You must provide an item name" })
 
@@ -31,6 +34,8 @@ router.post('/', (req, res) => {
 
 // UPDATE
 router.put('/', (req, res) => {
+    sleep.sleep(1)
+
     if (!req.body._id || !req.body.name)
         return res.status(400).json({ err: "You must provide an _id and a name of an item to edit." })
 
