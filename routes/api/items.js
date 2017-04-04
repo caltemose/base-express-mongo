@@ -48,11 +48,11 @@ router.put('/', (req, res) => {
 })
 
 // DELETE
-router.delete('/', (req, res) => {
-    if (!req.body._id)
+router.delete('/:_id', (req, res) => {
+    if (!req.params._id)
         return res.status(400).json({ err: "You must supply an _id of an item to delete" })
 
-    Item.findByIdAndRemove(req.body._id, (err, document) => {
+    Item.findByIdAndRemove(req.params._id, (err, document) => {
         // TODO determine how to send the correct error code
         if (err) {
             if (err.name === 'CastError')
