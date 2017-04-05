@@ -2,6 +2,8 @@
 
 This is a simple repo for the API bits of teaching basic CRUD with Node/Mongo to developers.
 
+Documentation of the overall approach and a walkthrough of the branches of this repo and the React front-end repo are available at [https://caltemose.github.io/base-react/](https://caltemose.github.io/base-react/).
+
 There are numbered branches which correspond to the basic features implementing a basic CRUD (Create, Read, Update, Delete) API for a simple database of items.
 
 The items data structure is:
