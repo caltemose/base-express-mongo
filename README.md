@@ -29,3 +29,4 @@ The branches are as follows:
 10. **010-update-item**: add the `PUT` route for `/api/items` to update an item in the database with the provided `_id` and `name` properties.
 11. **011-delete-item**: add the `DELETE` route for `/api/items` to remove an item from the database with the provided `_id`.
 12. **012-delete-item-update**: updated the `DELETE` route to pass `_id` through the URL rather than through the request body.
+13. **013-require-unique-names**: updated the Create and Edit endpoints to require unique names for all items in the database so we can enhance the features in the front-end.
